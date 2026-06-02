@@ -24,12 +24,9 @@ HTML, CSS e JavaScript.
 ### ⚙️ C++
 Exercícios e algoritmos.
 
-### 🔌 Eletrônica
-Projetos técnicos.
-
 ### 🚀 Projetos FIAP
 Challenges e trabalhos acadêmicos.
 
 ## Autor
 
-Pedro Lucas Provadelli
+Pedro Lucas Souza Provadelli
