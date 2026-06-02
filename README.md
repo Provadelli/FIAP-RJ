@@ -30,4 +30,3 @@ Challenges e trabalhos acadêmicos.
 ## Autor
 
 Pedro Lucas Souza Provadelli
-
