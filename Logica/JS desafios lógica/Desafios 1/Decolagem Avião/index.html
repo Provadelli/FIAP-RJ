@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistemas de Bordo - Checklist de Decolagem</title>
+    <style>
+        body {
+            background-color: #131313;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: left;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        h1 { text-align: center; color: #ed145b; font-size: 1.5rem; }
+
+        label { display: block; margin-top: 10px; font-size: 0.9rem; color: #bbb; }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 2px solid #333;
+            background: #000;
+            color: #fff;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+            background: #252525;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .checkbox-group input { width: auto; margin: 0; }
+
+        button {
+            background-color: #ed145b;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        button:hover { background-color: #ff2d70; transform: scale(1.02); }
+
+        #resultado-logica {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            border: 2px solid transparent;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>✈️ Flight Checklist</h1>
+        
+        <label>Combustível (%)</label>
+        <input type="number" id="combustivel" placeholder="Ex: 30">
+
+        <label>Peso da Aeronave (Toneladas)</label>
+        <input type="number" id="peso" placeholder="Ex: 45">
+
+        <label>Velocidade do Vento (km/h)</label>
+        <input type="number" id="vento" placeholder="Ex: 35">
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="flaps">
+            <label style="margin:0">Flaps Ajustados?</label>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="torre">
+            <label style="margin:0">Autorização da Torre?</label>
+        </div>
+
+        <button id="btnVerificar">Analisar Decolagem</button>
+
+        <div id="resultado-logica">Aguardando dados...</div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('btnVerificar');
+        //Chamar váriavel campoTexto seguir padrão de da variavel btn usando objeto (resultado-logica)
+        const campoTexto = document.getElementById('resultado-logica');
+        btn.addEventListener('click', () => {
+            // Entradas de dados
+            const combustivel = parseFloat(document.getElementById('combustivel').value);
+            const peso = parseFloat(document.getElementById('peso').value);
+            const vento = parseFloat(document.getElementById('vento').value);
+            const flapsAjustados = document.getElementById('flaps').checked;
+            const autorizacaoTorre = document.getElementById('torre').checked;
+
+            let mensagem = "";
+            let cor = "";
+            let decolagemOk = true;
+
+            //"#3fb950"; // Verde
+            //"#f85149"; //Vermelho
+            //"#d29922"; // Amarelo
+
+            // --- LÓGICA DE SEGURANÇA (Regras de Negócio) ---
+
+            //Exemplo lógico da váriavel
+            if (!autorizacaoTorre) {
+                mensagem = "DECOLAGEM ABORTADA: Aguardando liberação da Torre.";
+                decolagemOk = false;
+                cor = "#f85149"; // Rosa/Vermelho
+            } 
+            //Continue Aqui a lógica de bloqueio do voo......
+            else if (combustivel <=25){
+            mensagem = "DECOLAGEM ABORTADA: Combustível insuficiente para a decolagem.";
+            decolagemOk = false;
+            cor = "#f85149"; // Rosa/Vermelho
+        }
+            else if (!flapsAjustados){
+                mensagem = "DECOLAGEM ABORTADA: Flaps não ajustados.";
+                decolagemOk = false;
+                cor = "#f85149"; // Rosa/Vermelho
+            }
+            // peso/vento
+            else{
+                const ventolimite = peso > 50 && vento > 40
+                const ventomin = peso <= 50 && vento > 60
+            }
+            if (mensagem === "") {
+                console.log("Decolagem autorizada: Todos os sistemas estão dentro dos parâmetros de segurança.");
+                mensagem = "DECOLAGEM AUTORIZADA: Todos os sistemas estão dentro dos parâmetros de segurança.";
+                cor = "#3fb950"; // Verde
+            }
+            else {
+                console.log("DECOLAGEM ABORTADA: verifique os parâmetros de segurança.");
+                console.log("Motivo: " + mensagem);
+            }
+            campoTexto.innerText = mensagem;
+            campoTexto.style.color = cor;
+            campoTexto.style.borderColor = cor;
+            //Chamar borderColor seguir padrão display.style.color = cor;
+        });
+    </script>
+    
+</body>
+</html>
