@@ -12,7 +12,7 @@ O site apresenta:
 - Categorias de produtos
 - Layout responsivo para dispositivos móveis
 
-A proposta é oferecer uma página única, leve e de fácil navegação para clientes interessados nos produtos do bazar. :contentReference[oaicite:1]{index=1}
+A proposta é oferecer uma página única, leve e de fácil navegação para clientes interessados nos produtos do bazar. 
 
 ## Tecnologias Utilizadas
 
