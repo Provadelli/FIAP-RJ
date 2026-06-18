@@ -54,7 +54,7 @@ h1{
     font-size: 15px;
     margin-bottom: 10px;
 }
-img{
+.logo{
     display: flex;
     width: 130px;
     border-radius: 50%;
@@ -70,12 +70,20 @@ img{
     margin-bottom: 20px;
 }
 .item-contato{
+    text-decoration: none;
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
   
 }
+
+.item-contato:hover{
+    transform: translateY(-3px);
+    transition: 0.3s;
+   
+}
+
 
 .item-contato span{
     color: var(--terracota);
@@ -97,6 +105,7 @@ img{
 }
 
 .opcoes{
+    
     display: flex;
     flex-direction: column;
 }
@@ -109,8 +118,9 @@ img{
     
 }
 .item-opcao{
-
-    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 8px;
     margin: 10px 20px 5px 20px;
     border: 2px solid var(--acent-color);
     border-radius: 20px;
@@ -119,7 +129,12 @@ img{
     justify-content: space-between;
     display: flex;
     flex-direction: row;
-
+}
+.item-opcao:hover{
+    transform: translateY(-3px);
+    transition: 0.3s;
+    background-color: #f8f5d7;
+    
 }
 .divider{
     border: none;
@@ -152,4 +167,23 @@ body {
 img {
     max-width: 100%;
     height: auto;
+}
+
+/*roupas*/
+.img-roupa{
+    width: 12rem;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.cards{
+    display: flex;
+    border-radius: 20px;
+    flex-direction: column;
+    background-color: #f3dfd6;
+    align-items: center;
+    font-size: 10px;
+    margin: 20px
 }
