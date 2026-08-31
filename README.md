@@ -1,4 +1,4 @@
-# 🚀 FIAP-RJ
+# FIAP-RJ
 
 Repositório dedicado aos meus estudos em Engenharia de Software na FIAP.
 
@@ -12,19 +12,19 @@ Repositório dedicado aos meus estudos em Engenharia de Software na FIAP.
 
 ## Estrutura
 
-### 📚 Lógica
+### Lógica
 Exercícios e desafios.
 
-### 🐍 Python
+### Python
 Projetos e atividades.
 
-### 🌐 Front-End
+### Front-End
 HTML, CSS e JavaScript.
 
-### ⚙️ C++
+### C++
 Exercícios e algoritmos.
 
-### 🚀 Projetos FIAP
+### Projetos FIAP
 Challenges e trabalhos acadêmicos.
 
 ## Autor
