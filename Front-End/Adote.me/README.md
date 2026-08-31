@@ -134,7 +134,7 @@ Durante o desenvolvimento deste projeto foram aplicados conhecimentos de:
 - Organização de código CSS
 
 ---
-### Projeto disponível em: https://adoteme-hazel.vercel.app/
+### Projeto disponível em: https://adoteme-pets.vercel.app/
 ## 👨‍💻 Autor
 
 **Pedro Lucas Souza Provadelli**
